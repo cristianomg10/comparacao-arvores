@@ -34,7 +34,7 @@ for dados in num_dados:
         fim = time() - inicio
         resultados = atualiza(resultados, {
             'execucao': execucao+1,
-            'num_dados': num_dados,
+            'num_dados': dados,
             'operacao': 'insercao',
             'abordagem': 'Red Black',
             'tempo_gasto': f"{fim:.8f}"
@@ -51,7 +51,7 @@ for dados in num_dados:
         fim = time() - inicio
         resultados = atualiza(resultados, {
             'execucao': execucao+1,
-            'num_dados': num_dados,
+            'num_dados': dados,
             'operacao': 'insercao',
             'abordagem': 'AVL',
             'tempo_gasto': f"{fim:.8f}"
@@ -65,7 +65,7 @@ for dados in num_dados:
         fim = time() - inicio
         resultados = atualiza(resultados, {
             'execucao': execucao+1,
-            'num_dados': num_dados,
+            'num_dados': dados,
             'operacao': 'pesquisa',
             'abordagem': 'Red Black',
             'tempo_gasto': f"{fim:.8f}"
@@ -78,7 +78,7 @@ for dados in num_dados:
         fim = time() - inicio
         resultados = atualiza(resultados, {
             'execucao': execucao+1,
-            'num_dados': num_dados,
+            'num_dados': dados,
             'operacao': 'pesquisa',
             'abordagem': 'AVL',
             'tempo_gasto': f"{fim:.8f}"
@@ -92,7 +92,7 @@ for dados in num_dados:
         fim = time() - inicio
         resultados = atualiza(resultados, {
             'execucao': execucao + 1,
-            'num_dados': num_dados,
+            'num_dados': dados,
             'operacao': 'exclusão',
             'abordagem': 'Red Black',
             'tempo_gasto': f"{fim:.8f}"
@@ -105,7 +105,7 @@ for dados in num_dados:
         fim = time() - inicio
         resultados = atualiza(resultados, {
             'execucao': execucao+1,
-            'num_dados': num_dados,
+            'num_dados': dados,
             'operacao': 'pesquisa',
             'abordagem': 'AVL',
             'tempo_gasto': f"{fim:.8f}"
