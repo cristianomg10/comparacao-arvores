@@ -124,7 +124,7 @@ for dados in num_dados:
         resultados = atualiza(resultados, {
             'execucao': execucao+1,
             'num_dados': dados,
-            'operacao': 'pesquisa',
+            'operacao': 'exclusão',
             'abordagem': 'AVL',
             'tempo_gasto': f"{fim:.12f}",
             'rotacoes': myTree.rotation,
