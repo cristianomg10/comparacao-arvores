@@ -21,6 +21,7 @@ class RedBlackTree:
         self.TNULL.left = None
         self.TNULL.right = None
         self.root = self.TNULL
+        self.rotation = 0
 
     def __pre_order_helper(self, node):
         if node != self.TNULL:
@@ -213,8 +214,7 @@ class RedBlackTree:
                 indent += "|    "
 
             s_color = "RED" if node.color == 1 else "BLACK"
-            print
-            str(node.data) + "(" + s_color + ")"
+            print(str(node.data) + "(" + s_color + ")")
             self.__print_helper(node.left, indent, False)
             self.__print_helper(node.right, indent, True)
 
@@ -283,6 +283,7 @@ class RedBlackTree:
 
     # rotate left at node x
     def left_rotate(self, x):
+        self.rotation += 1
         y = x.right
         x.right = y.left
         if y.left != self.TNULL:
@@ -300,6 +301,7 @@ class RedBlackTree:
 
     # rotate right at node x
     def right_rotate(self, x):
+        self.rotation += 1 
         y = x.left
         x.left = y.right
         if y.right != self.TNULL:
@@ -367,3 +369,10 @@ class RedBlackTree:
     # print the tree structure on the screen
     def pretty_print(self):
         self.__print_helper(self.root, "", True)
+
+    def get_height(self, root, value_condition=None):
+        if root is None: return 0
+        left_height = self.get_height(root.left)
+        right_height = self.get_height(root.right)
+        if root == value_condition: return left_height, right_height
+        return max(left_height, right_height) + 1

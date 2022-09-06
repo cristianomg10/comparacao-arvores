@@ -11,15 +11,18 @@ class TreeNode(object):
         self.height = 1
 
 
-class AVLTree(object):
+class  AVLTree(object):
+    def __init__(self) -> None:
+        self.rotation = 0
 
     def find(self, root, key):
-        if root is None: return None
-        if key < root.key: return self.find(root.left, key)
-        if key > root.key: return self.find(root.right, key)
-        if key == root.key: return root
-        return None
+        if root is None or key == root.key:
+            return root
 
+        if key < root.key:
+            return self.find(root.left, key)
+        return self.find(root.right, key)
+        
     # Function to insert a node
     def insert_node(self, root, key):
 
@@ -101,6 +104,7 @@ class AVLTree(object):
 
     # Function to perform left rotation
     def leftRotate(self, z):
+        self.rotation += 1
         y = z.right
         T2 = y.left
         y.left = z
@@ -113,6 +117,7 @@ class AVLTree(object):
 
     # Function to perform right rotation
     def rightRotate(self, z):
+        self.rotation += 1
         y = z.left
         T3 = y.right
         y.right = z
